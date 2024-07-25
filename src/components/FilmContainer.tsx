@@ -1,6 +1,7 @@
 import useFetch from "../hooks/useFetch";
-import FilmInstance from "./filmInstance";
-import Film from "../interfaces/film";
+import FilmInstance from "./FilmInstance";
+
+import Film from "../interfaces/Film";
 
 export default function FilmContainer () {
     const { data: films, loading, error } = useFetch<Film[]>("http://localhost:8080/films");

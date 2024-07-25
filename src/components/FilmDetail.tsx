@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
-import Film from "../interfaces/film";
+import Film from "../interfaces/Film";
 
 
 export default function FilmDetail() {

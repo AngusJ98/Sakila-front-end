@@ -1,24 +1,24 @@
 import useFetch from "../hooks/useFetch";
-import FilmInstance from "./filmInstance";
-import Film from "../interfaces/film";
+import ActorInstance from "./ActorInstance";
+import Actor from "../interfaces/Actor";
 
-export default function FilmContainer () {
-    const { data: films, loading, error } = useFetch<Film[]>("http://localhost:8080/films");
+export default function ActorContainer () {
+    const { data: actors, loading, error } = useFetch<Actor[]>("http://localhost:8080/actors");
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: error</p>;
 
-    const filmList = films!.map(film => (
-        <FilmInstance id={film.id} title={film.title} description={film.description} releaseYear = {film.releaseYear} key={film.id} />
+    const actorList = actors!.map(actor => (
+        <ActorInstance id={actor.id} title={actor.title} description={actor.description} releaseYear = {actor.releaseYear} key={actor.id} />
     ))
 
     return (
         <>
-            <section className="filmList">
-                <h1>List of all films</h1>
+            <section className="actorList">
+                <h1>List of all actors</h1>
 
-                <ul className="filmContainerList">
-                    {filmList}
+                <ul className="actorContainerList">
+                    {actorList}
                 </ul>
             </section>
         </>
