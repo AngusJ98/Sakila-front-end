@@ -1,4 +1,4 @@
-import Actor from "./actor";
+import Actor from "./Actor";
 
 export default interface Film {
     id: number;

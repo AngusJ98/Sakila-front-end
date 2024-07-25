@@ -9,7 +9,7 @@ export default function ActorContainer () {
     if (error) return <p>Error: error</p>;
 
     const actorList = actors!.map(actor => (
-        <ActorInstance id={actor.id} title={actor.title} description={actor.description} releaseYear = {actor.releaseYear} key={actor.id} />
+        <ActorInstance id={actor.id} firstName={actor.firstName} lastName={actor.lastName} films={actor.films} key={actor.id} />
     ))
 
     return (
