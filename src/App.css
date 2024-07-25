@@ -1,42 +1,120 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: auto auto;
+  padding: 0;
   text-align: center;
+  height: 100%;
+}
+.fixedBox {
+  max-width: 400px;
+  min-width: 400px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.coolBoxRed {
+  background-color: rgb(0, 0, 0);
+  background-Image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.75), rgba(56, 0, 0, 0.5), #000a00);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  float: left;
+  box-shadow: 3px 3px 3px grey;
+  margin: 1%;
+  border-radius: 2.5%; 
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filmContainerList {
+  padding: 15px 12px;
+  height: var;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.expandable p {
+  margin: 0px;
+  padding-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+.expandable {
+  margin: 5px;
+  padding: 5px;
 }
 
-.read-the-docs {
-  color: #888;
+nav {
+  align-self: flex-start;
+  display: flex;
+}
+
+.basePage {
+  flex: auto;
+  flex-direction: column;
+  height: 100%;
+  float: top;
+  display: flex;
+  align-items: center;
+}
+
+.filmDetail-container {
+  color: aliceblue;
+  background-color: #222;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.film-title {
+  font-size: 2em;
+  color: aliceblue;
+  margin: 0 0 10px 0;
+}
+
+.film-details {
+  margin-bottom: 20px;
+}
+
+.film-details span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.film-description {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.cast-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cast-list Link {
+  background-color: #444;
+  width:50%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.special-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.special-features li {
+  background-color: #555;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
