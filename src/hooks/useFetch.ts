@@ -8,7 +8,7 @@ interface FetchState<T> {
 
 export default function useFetch<T>(url: string): FetchState<T> {
     const [loading, setLoading] = useState(true)
-    const [data, setData] = useState(null)
+    const [data, setData] = useState<T|null>(null)
     const [error, setError] = useState(null)
     useEffect(() => {
         fetch(url)

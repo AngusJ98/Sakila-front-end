@@ -2,24 +2,52 @@ import useFetch from "../hooks/useFetch";
 import FilmInstance from "./FilmInstance";
 
 import Film from "../interfaces/Film";
+import { useEffect, useState } from "react";
 
 export default function FilmContainer () {
     const { data: films, loading, error } = useFetch<Film[]>("http://localhost:8080/films");
+    const [search, setSearch] = useState("");
+    const [filteredFilms, setFilteredFilms]  = useState<Film[]>([]);
+    
+    
+    
+    useEffect(() => {
+        if (films !== null) {
+            const filteredItems = films.filter(f => f.title.toUpperCase().includes(search.toUpperCase()) || f.description.toUpperCase().includes(search.toUpperCase()))
+            setFilteredFilms(filteredItems)
+        } 
+    }, [search, films]) //Should be used whenever films is changed (should happen only when it's loaded, and when search bar content changes)
+
+    function handleSearchChange (s: string) {
+        setSearch(s);
+    }
+
 
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: error</p>;
+    if (error) return <p>Error... oops</p>
 
-    const filmList = films!.map(film => (
-        <FilmInstance id={film.id} title={film.title} description={film.description} releaseYear = {film.releaseYear} key={film.id} />
-    ))
+
+    
+
+    if (filteredFilms === null || filteredFilms === undefined) {
+        return (<p>Films is undefined/null for some reason</p>)
+    }
+    
 
     return (
         <>
-            <section className="filmList">
+            <section className="instanceList">
+                <section className="top">
                 <h1>List of all films</h1>
-
-                <ul className="filmContainerList">
-                    {filmList}
+                    <section className="coolBoxRed searchBar">
+                        <input type="search" name="searchForm" id="searchForm" placeholder="Search titles and descriptions..." value={search}
+                        onChange={e => handleSearchChange(e.target.value)}></input>
+                    </section>
+                </section>
+                <ul className="instanceContainerList">
+                    {filteredFilms!.map(film => (
+                            <FilmInstance id={film.id} title={film.title} description={film.description} releaseYear = {film.releaseYear} key={film.id} />
+                        ))}
                 </ul>
             </section>
         </>

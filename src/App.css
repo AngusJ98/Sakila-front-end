@@ -4,10 +4,19 @@
   padding: 0;
   text-align: center;
   height: 100%;
+  background-attachment: fixed;
+  background-color: #000000;
+  background-image: linear-gradient(to bottom right,#000000, rgba(43, 43, 43, 0.527), rgba(71, 71, 71, 0.548), rgba(55, 59, 55, .527), #080808), url("background.svg");
+  color: aliceblue
 }
 .fixedBox {
   max-width: 400px;
   min-width: 400px;
+}
+
+.wideFixedBox {
+  max-width: 800px;
+  min-width: 800px;
 }
 
 .coolBoxRed {
@@ -37,12 +46,12 @@
 
 .expandable p {
   margin: 0px;
-  padding-bottom: 20px;
+  padding: 0px;
 }
 
 .expandable {
   margin: 5px;
-  padding: 5px;
+  padding: 0px;
 }
 
 nav {
@@ -117,4 +126,55 @@ nav {
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
+}
+
+nav {
+  width: 50%;
+}
+
+.navButton {
+  background-color: rgb(0, 0, 0);
+  background-Image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.75), rgba(56, 0, 0, 0.5), #000a00);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  float: left;
+  width: 20%;
+  box-shadow: 3px 3px 3px grey;
+  margin: 1%;
+  border-radius: 2.5%; 
+}
+
+.navButton a {
+  color: aliceblue;
+}
+
+.instanceList {
+  align-content: center;
+  width: 100%
+}
+
+.searchBar {
+  height: auto;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5%;
+  width:50%;
+  
+}
+.searchBar input {
+  font-size: 2em;
+  background-color: aliceblue;
+  width: 70%;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+}
+
+.instanceContainerList {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }

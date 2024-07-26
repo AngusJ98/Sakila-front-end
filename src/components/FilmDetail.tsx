@@ -13,26 +13,32 @@ export default function FilmDetail() {
     }
     return (
         <>
- <div className="coolBoxRed">
+ <article className="coolBoxRed wideFixedBox">
     <h1>{film.title}</h1>
-    <div className="film-details">
+    <section className="film-details">
       <span>Release Year: {film.releaseYear}</span>
       <span>Language: {film.language.name}</span>
       <span>Rating: {film.rating}</span>
-    </div>
-    <div className="film-description">
+    </section>
+    <section className="film-description">
       {film.description}
-    </div>
+    </section>
     <h2>Cast</h2>
     <ul className="cast-list">
-        {film.cast.map(a => <Link to={"/actors/" + a.id}>{a.firstName} {a.lastName}</Link>)}
+        {film.cast.map(a => <Link to={"/actors/" + a.id} key={a.id}>{a.firstName} {a.lastName}</Link>)}
     </ul>
     <h2>Special Features</h2>
     <ul className="special-features">
-        {film?.specialFeatures}
+        {film?.specialFeatures.join(", ")}
     </ul>
-  </div>
-            <Link to="/films">Back to Films</Link>
+    
+    <h2>Rental Details</h2>
+    <p><strong>Rental cost:</strong> {film.rentalRate} </p>
+    <p><strong>Rental Duration:</strong> {film.rentalDuration} days</p>
+    
+    
+</article>
+    <Link to="/films">Back to Films</Link>
         </>
     )
 }

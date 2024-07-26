@@ -11,9 +11,9 @@ export default function ActorDetail () {
         return <p>Somehow actor was null/undefined. Very sad.</p>
     }
 
-    const filmLinks = actor.films.map(f => <Link to={"/films/" + f.id}>{f.title}</Link>)
+    const filmLinks = actor.films.map(f => <Link to={"/films/" + f.id} key={f.id}>{f.title}</Link>)
     return (
-        <div className="coolBoxRed">
+        <div className="coolBoxRed wideFixedBox">
         <h1>{actor.firstName + " " + actor.lastName}</h1>
         <h2>Films</h2>
         <ul className="cast-list">
