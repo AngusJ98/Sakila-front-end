@@ -4,11 +4,15 @@
   padding: 0;
   text-align: center;
   height: 100%;
-  background-attachment: fixed;
-  background-color: #000000;
-  background-image: linear-gradient(to bottom right,#000000, rgba(43, 43, 43, 0.527), rgba(71, 71, 71, 0.548), rgba(55, 59, 55, .527), #080808), url("background.svg");
   color: aliceblue
 }
+
+body {
+  background-attachment: fixed;
+  background-color: #000000;
+  background-image: linear-gradient(to bottom right,#000000, rgba(43, 43, 43, 0.527), rgba(71, 71, 71, 0.548), rgba(55, 59, 55, .527), #080808), url("./assets/background.svg");
+}
+
 .fixedBox {
   max-width: 400px;
   min-width: 400px;
