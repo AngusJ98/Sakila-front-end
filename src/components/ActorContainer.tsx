@@ -2,9 +2,10 @@ import useFetch from "../hooks/useFetch";
 import ActorInstance from "./ActorInstance";
 import Actor from "../interfaces/Actor";
 import { useState, useEffect } from "react";
+import { Config } from "../Config";
 
 export default function ActorContainer () {
-    const { data: actors, loading, error } = useFetch<Actor[]>("http://localhost:8080/actors");
+    const { data: actors, loading, error } = useFetch<Actor[]>(Config.API_URL + "/actors");
     const [search, setSearch] = useState("");
     const [filteredActors, setFilteredActors]  = useState<Actor[]>([]);
 

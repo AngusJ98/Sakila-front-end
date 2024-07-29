@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 
+
+//Todo Make sure this functions as intended
 export default function usePost<T>(url: string, inData:T) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)

@@ -1,11 +1,11 @@
 import useFetch from "../hooks/useFetch";
 import FilmInstance from "./FilmInstance";
-
+import { Config } from "../Config";
 import Film from "../interfaces/Film";
 import { useEffect, useState } from "react";
 
 export default function FilmContainer () {
-    const { data: films, loading, error } = useFetch<Film[]>("http://localhost:8080/films");
+    const { data: films, loading, error } = useFetch<Film[]>(Config.API_URL + "/films");
     const [search, setSearch] = useState("");
     const [filteredFilms, setFilteredFilms]  = useState<Film[]>([]);
     
