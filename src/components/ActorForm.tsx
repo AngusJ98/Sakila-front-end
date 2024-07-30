@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FormEvent } from "react";
 import usePost from "../hooks/usePost";
 import { Config } from "../Config";
 export default function ActorForm() {
     const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("")
+    const [lastName, setLastName] = useState("");
+
+
     function handleFirstNameChange(name:string) {
         setFirstName(name)
     }
@@ -14,30 +16,36 @@ export default function ActorForm() {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         const actor = { firstName, lastName };
-        usePost(Config.API_URL + "/actors", actor)
+        usePost(Config.API_URL + "/actors", actor);
     }
 
     return (
         <article className="coolBoxRed wideFixedBox">
-            <label>
-              First Name:
-              <input 
-                type="text" 
-                value={firstName} 
-                onChange={e => handleFirstNameChange(e.target.value)} 
-              />
-            </label>
+            <form onSubmit={handleSubmit}>
+                <p>
+                    <label>
+                    First Name:
+                        <input 
+                            type="text" 
+                            value={firstName} 
+                            onChange={e => handleFirstNameChange(e.target.value)} 
+                        />
+                    </label>
+                </p>
 
-            <label>
-              Last Name:
-              <input 
-                type="text" 
-                value={lastName} 
-                onChange={e => handleLastNameChange(e.target.value)} 
-              />
-            </label>
+                <p>
+                    <label>
+                        Last Name:
+                        <input 
+                            type="text" 
+                            value={lastName} 
+                            onChange={e => handleLastNameChange(e.target.value)} 
+                        />
+                    </label>
+                </p>
 
-            <button type="submit">Submit!</button>
+                <button type="submit">Submit!</button>
+            </form>
         </article>
     )
 }

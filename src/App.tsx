@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import FilmDetail from './components/FilmDetail';
 import ActorContainer from './components/ActorContainer';
 import ActorDetail from './components/ActorDetail';
+import ActorForm from './components/ActorForm';
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
           <Route path="/films/:filmId" element={<FilmDetail />} />
           <Route path="/actors" element={<ActorContainer />} />
           <Route path="/actors/:actorId" element={<ActorDetail />} />
+          <Route path="/actors/form" element={<ActorForm />} /> 
           <Route path="*" element={ErrorPage()} />
 
         </Routes>
