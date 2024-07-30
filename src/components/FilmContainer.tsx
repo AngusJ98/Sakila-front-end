@@ -1,5 +1,5 @@
 import useFetch from "../hooks/useFetch";
-import FilmInstance from "./1ilmInstance";
+import FilmInstance from "./FilmInstance";
 import { Config } from "../Config";
 import Film from "../interfaces/Film";
 import { useEffect, useState } from "react";
