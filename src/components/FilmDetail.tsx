@@ -1,11 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Film from "../interfaces/Film";
+import { Config } from "../Config";
 
 
 export default function FilmDetail() {
     const {filmId} = useParams();
-    const { data: film, loading, error } = useFetch<Film>("/films/" + filmId);
+    const { data: film, loading, error } = useFetch<Film>(Config.API_URL + "/films/" + filmId);
     if (loading) return <p>Loading...</p>;
     if (error) return <section id="error"> <h1>Error: Something went wrong</h1> <Link className="coolBoxRed" to="/">GO HOME</Link> </section>;
     if (film === undefined || film === null) {

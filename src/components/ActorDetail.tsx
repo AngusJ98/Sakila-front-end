@@ -1,10 +1,11 @@
 import { Link, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch";
 import Actor from "../interfaces/Actor";
+import { Config } from "../Config";
 
 export default function ActorDetail () {
     const {actorId} = useParams();
-    const { data: actor, loading, error } = useFetch<Actor>("/actors/" + actorId);
+    const { data: actor, loading, error } = useFetch<Actor>(Config.API_URL + "/actors/" + actorId);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: error</p>;
     if (actor === undefined || actor === null) {
