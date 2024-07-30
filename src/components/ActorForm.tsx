@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FormEvent } from "react";
 import usePost from "../hooks/usePost";
 import { Config } from "../Config";
