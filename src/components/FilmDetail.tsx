@@ -5,7 +5,7 @@ import Film from "../interfaces/Film";
 
 export default function FilmDetail() {
     const {filmId} = useParams();
-    const { data: film, loading, error } = useFetch<Film>("http://localhost:8080/films/" + filmId);
+    const { data: film, loading, error } = useFetch<Film>("/films/" + filmId);
     if (loading) return <p>Loading...</p>;
     if (error) return <section id="error"> <h1>Error: Something went wrong</h1> <Link className="coolBoxRed" to="/">GO HOME</Link> </section>;
     if (film === undefined || film === null) {

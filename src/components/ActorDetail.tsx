@@ -4,7 +4,7 @@ import Actor from "../interfaces/Actor";
 
 export default function ActorDetail () {
     const {actorId} = useParams();
-    const { data: actor, loading, error } = useFetch<Actor>("http://localhost:8080/actors/" + actorId);
+    const { data: actor, loading, error } = useFetch<Actor>("/actors/" + actorId);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: error</p>;
     if (actor === undefined || actor === null) {
