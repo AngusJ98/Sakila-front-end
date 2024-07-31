@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import useFetch from "../hooks/useFetch";
 import Actor from "../interfaces/Actor";
 import { Config } from "../Config";
+import DeleteButton from "./DeleteButton";
 
 export default function ActorDetail () {
     const {actorId} = useParams();
@@ -20,6 +21,7 @@ export default function ActorDetail () {
             <ul className="cast-list">
                 {filmLinks}
             </ul>
+            <DeleteButton locationBase={"/actors"} location={"/" + actorId}/>
         </div>
     )
 }
