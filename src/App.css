@@ -182,3 +182,14 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.deleteButton {
+  padding: 10px;
+}
+
+.formLink {
+  padding: auto;
+  width: 200px;
+  align-self: center;
+  background-Image: linear-gradient(to bottom right, rgba(50, 158, 0, 0.75), rgba(56, 0, 0, 0.5), #000a00);
+}

@@ -3,7 +3,7 @@ import ActorInstance from "./ActorInstance";
 import Actor from "../interfaces/Actor";
 import { useState, useEffect } from "react";
 import { Config } from "../Config";
-
+import { Link } from "react-router-dom";
 export default function ActorContainer () {
     const { data: actors, loading, error } = useFetch<Actor[]>(Config.API_URL + "/actors");
     const [search, setSearch] = useState("");
@@ -33,7 +33,10 @@ export default function ActorContainer () {
                     <section className="coolBoxRed searchBar">
                             <input type="search" name="searchForm" id="searchForm" placeholder="Search actor names..." value={search}
                             onChange={e => handleSearchChange(e.target.value)}></input>
+                          
                         </section>
+                    <Link to="/actors/form" className="coolBoxRed formLink">New Actor</Link>  
+                        
                 </section>
                 <ul className="instanceContainerList">
                     {filteredActors.map(a => <ActorInstance id={a.id} firstName={a.firstName} lastName={a.lastName} films={a.films}/>)}

@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Film from "../interfaces/Film";
 import { Config } from "../Config";
-
+import DeleteButton from "./DeleteButton";
 
 export default function FilmDetail() {
     const {filmId} = useParams();
@@ -36,6 +36,7 @@ export default function FilmDetail() {
     <h2>Rental Details</h2>
     <p><strong>Rental cost:</strong> {film.rentalRate} </p>
     <p><strong>Rental Duration:</strong> {film.rentalDuration} days</p>
+    <DeleteButton locationBase={"/films"} location={"/" + filmId}/>
     
     
 </article>

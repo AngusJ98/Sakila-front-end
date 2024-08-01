@@ -1,24 +1,35 @@
-import { useState } from "react"
-import { FormEvent } from "react";
+import { useState, useEffect } from "react"
 import usePost from "../hooks/usePost";
 import { Config } from "../Config";
+
+import { useNavigate } from "react-router-dom";
+
+interface ActorInput {
+    firstName: string;
+    lastName: string;
+}
 export default function ActorForm() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
-
-
+    const url: string = Config.API_URL + "/actors";
+    const {status, error, handlePost} = usePost<ActorInput>(url)
+    const nav = useNavigate();
+    useEffect(() => {
+        if (status === 201) {
+          alert("Post successful");
+          //nav("/actors");
+        }
+      }, [status, nav]);
     function handleFirstNameChange(name:string) {
         setFirstName(name)
     }
     function handleLastNameChange(name:string) {
         setLastName(name)
     }
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        const actor = { firstName, lastName };
-        usePost(Config.API_URL + "/actors", actor);
+    function handleSubmit() {
+        const data = {firstName: firstName, lastName: lastName}
+        handlePost(data);
     }
-
     return (
         <article className="coolBoxRed wideFixedBox">
             <form onSubmit={handleSubmit}>
