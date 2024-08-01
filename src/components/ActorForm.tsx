@@ -12,7 +12,7 @@ export default function ActorForm() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const url: string = Config.API_URL + "/actors";
-    const {status, error, handlePost} = usePost<ActorInput>(url)
+    const {status, handlePost} = usePost<ActorInput>(url)
     const nav = useNavigate();
     useEffect(() => {
         if (status === 201) {

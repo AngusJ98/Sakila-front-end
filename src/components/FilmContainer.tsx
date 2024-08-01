@@ -3,7 +3,7 @@ import FilmInstance from "./FilmInstance";
 import { Config } from "../Config";
 import Film from "../interfaces/Film";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function FilmContainer () {
     const { data: films, loading, error } = useFetch<Film[]>(Config.API_URL + "/films");
     const [search, setSearch] = useState("");
@@ -43,6 +43,7 @@ export default function FilmContainer () {
                         <input type="search" name="searchForm" id="searchForm" placeholder="Search titles and descriptions..." value={search}
                         onChange={e => handleSearchChange(e.target.value)}></input>
                     </section>
+                    <Link to="/films/form" className="coolBoxRed formLink">New Film</Link>  
                 </section>
                 <ul className="instanceContainerList">
                     {filteredFilms!.map(film => (

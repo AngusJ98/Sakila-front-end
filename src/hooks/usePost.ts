@@ -23,7 +23,7 @@ const usePost = <T>(url: string): PostResult<T> => {
                     throw new Error(error.message || "An error has occurred")
                 } else {
                     setError(null);
-                    alert("Actor creation successful")
+                    alert("Creation successful")
                 }
             })
         } catch (err) {

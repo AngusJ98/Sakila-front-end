@@ -8,6 +8,7 @@ import FilmDetail from './components/FilmDetail';
 import ActorContainer from './components/ActorContainer';
 import ActorDetail from './components/ActorDetail';
 import ActorForm from './components/ActorForm';
+import FilmForm from './components/FilmForm';
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={HomePage()} />
           <Route path="/films" element={<FilmContainer/>} />
           <Route path="/films/:filmId" element={<FilmDetail />} />
+          <Route path="/films/form" element={<FilmForm />} /> 
           <Route path="/actors" element={<ActorContainer />} />
           <Route path="/actors/:actorId" element={<ActorDetail />} />
           <Route path="/actors/form" element={<ActorForm />} /> 
