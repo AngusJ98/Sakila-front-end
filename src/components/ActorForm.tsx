@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, FormEvent } from "react"
 import usePost from "../hooks/usePost";
 import { Config } from "../Config";
 
@@ -17,7 +17,7 @@ export default function ActorForm() {
     useEffect(() => {
         if (status === 201) {
           alert("Post successful");
-          //nav("/actors");
+          nav("/actors");
         }
       }, [status, nav]);
     function handleFirstNameChange(name:string) {
@@ -26,13 +26,15 @@ export default function ActorForm() {
     function handleLastNameChange(name:string) {
         setLastName(name)
     }
-    function handleSubmit() {
+    function handleSubmit(event: FormEvent) {
+        event.preventDefault();
         const data = {firstName: firstName, lastName: lastName}
         handlePost(data);
+        console.log(status)
     }
     return (
         <article className="coolBoxRed wideFixedBox">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={e => handleSubmit(e)}>
                 <p>
                     <label>
                     First Name:
