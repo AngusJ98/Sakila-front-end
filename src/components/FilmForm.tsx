@@ -42,7 +42,7 @@ const FilmForm = () => {
     const nav = useNavigate();
     useEffect(() => {
         if (status === 201) {
-          alert("Post successful");
+          alert("Film added successfully");
           nav("/films");
         }
     }, [status, nav]);
@@ -77,6 +77,11 @@ const FilmForm = () => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     };
+
+    const handleRatingChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        const {name, value } = e.target
+        setFormValues({ ...formValues, [name]: value });
+    }
 
     const toggleSpecialFeature = (feature: string) => {
         setFormValues(prevValues => {
@@ -117,7 +122,8 @@ const FilmForm = () => {
     };
 
     return (
-        <article className="coolBoxRed wideFixedBox">
+        <article className="coolBoxGreen wideFixedBox">
+            <h2>Submit new Film?</h2>
             <form onSubmit={handleSubmit}>
                 <section>
                     <label>Title</label>
@@ -223,12 +229,17 @@ const FilmForm = () => {
 
                 <section>
                     <label>Rating</label>
-                    <input
-                        type="text"
+                    <select
                         name="rating"
                         value={formValues.rating}
-                        onChange={handleChange}
-                    />
+                        onChange={handleRatingChange}
+                        >
+                        <option value="G">G</option>
+                        <option value="PG">PG</option>
+                        <option value="PG_13">PG-13</option>
+                        <option value="R">R</option>
+                        <option value="NC_17">NC-17</option>
+                    </select>
                 </section>
 
                 <section>

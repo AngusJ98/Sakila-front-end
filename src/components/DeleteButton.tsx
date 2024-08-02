@@ -16,7 +16,7 @@ export default function DeleteButton (props: {locationBase: string, location: st
     
 
     return (
-        <section className="deleteButton">
+        <section className="deleteButton coolBoxRed">
             <button onClick={handleDelete}>Delete</button>
         </section>
     )

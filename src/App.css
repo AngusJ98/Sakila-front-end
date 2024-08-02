@@ -181,10 +181,13 @@ nav {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  
 }
 
 .deleteButton {
   padding: 10px;
+  background-Image: linear-gradient(to bottom right, rgba(73, 73, 73, 0.75), rgba(102, 102, 102, 0.5), #000a00);
+  border-radius: 5%;
 }
 
 .formLink {
@@ -192,4 +195,27 @@ nav {
   width: 200px;
   align-self: center;
   background-Image: linear-gradient(to bottom right, rgba(50, 158, 0, 0.75), rgba(56, 0, 0, 0.5), #000a00);
+}
+
+button {
+  align-self: center;
+  align-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  height: 80%;
+}
+
+form p {
+  color: red;
+}
+
+.coolBoxGreen {
+  background-color: rgb(0, 0, 0);
+  background-Image: linear-gradient(to bottom right, rgba(24, 145, 0, 0.795), rgb(0, 31, 8), #000a00);
+  border: 1px solid aliceblue;
+  color: aliceblue;
+  float: left;
+  box-shadow: 3px 3px 3px grey;
+  margin: 1%;
+  border-radius: 2.5%; 
 }
