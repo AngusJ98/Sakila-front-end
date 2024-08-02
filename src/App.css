@@ -203,6 +203,8 @@ button {
   align-items: center;
   padding: 20px;
   height: 80%;
+  box-sizing: border-box;
+  
 }
 
 form p {

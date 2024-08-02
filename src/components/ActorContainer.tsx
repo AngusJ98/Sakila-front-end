@@ -39,7 +39,7 @@ export default function ActorContainer () {
                         
                 </section>
                 <ul className="instanceContainerList">
-                    {filteredActors.map(a => <ActorInstance id={a.id} firstName={a.firstName} lastName={a.lastName} films={a.films}/>)}
+                    {filteredActors.map(a => <ActorInstance id={a.id} key={a.id} firstName={a.firstName} lastName={a.lastName} films={a.films}/>)}
                 </ul>
             </section>
         </>

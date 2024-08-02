@@ -34,6 +34,7 @@ export default function ActorForm() {
     }
     return (
         <article className="coolBoxRed wideFixedBox">
+            <h2>New Actor?</h2>
             <form onSubmit={e => handleSubmit(e)}>
                 <p>
                     <label>
