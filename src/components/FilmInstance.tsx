@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function FilmInstance (props:{id: number, title: string, description: string, releaseYear:number}) {
     const { getCollapseProps, getToggleProps } = useCollapse()
     return (
-        <div className="coolBoxRed fixedBox" >
+        <div className="coolBoxRed fixedBox filmInstance" >
             <div className="" {...getToggleProps()}>
                 <h3 className="">{props.title}</h3>
                 <p className="">{props.releaseYear}</p>

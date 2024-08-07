@@ -7,7 +7,7 @@ export default function ActorInstance (props:{id: number, firstName: string, las
     return (
         <Link to={"/actors/" + props.id} className="coolBoxRed fixedBox" >
             <div className="">
-                <h3 className="">{props.firstName + " " + props.lastName} </h3>
+                <h3 className="">{props.firstName + " " + props.lastName}</h3>
             </div>
         </Link>
     )

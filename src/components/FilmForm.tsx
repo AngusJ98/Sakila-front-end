@@ -75,7 +75,7 @@ const FilmForm = () => {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
+        setFormValues({ ...formValues, [name]: value});
     };
 
     const handleRatingChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -130,6 +130,7 @@ const FilmForm = () => {
                     <input
                         type="text"
                         name="title"
+                        data-cy="title"
                         value={formValues.title}
                         onChange={handleChange}
                     />
@@ -140,6 +141,7 @@ const FilmForm = () => {
                     <label>Description</label>
                     <input
                         type="text"
+                        data-cy="description"
                         name="description"
                         value={formValues.description}
                         onChange={handleChange}
@@ -150,6 +152,7 @@ const FilmForm = () => {
                     <label>Release Year</label>
                     <input
                         type="number"
+                        data-cy="releaseYear"
                         name="releaseYear"
                         value={formValues.releaseYear}
                         onChange={handleChange}
@@ -160,6 +163,7 @@ const FilmForm = () => {
                     <label>Language ID</label>
                     <input
                         type="number"
+                        data-cy="languageId"
                         name="languageId"
                         value={formValues.languageId}
                         onChange={handleChange}
@@ -172,6 +176,7 @@ const FilmForm = () => {
                     <label>Original Language ID</label>
                     <input
                         type="number"
+                        data-cy="originalLanguageId"
                         name="originalLanguageId"
                         value={formValues.originalLanguageId}
                         onChange={handleChange}
@@ -184,6 +189,7 @@ const FilmForm = () => {
                     <label>Rental Duration</label>
                     <input
                         type="number"
+                        data-cy="rentalDuration"
                         name="rentalDuration"
                         value={formValues.rentalDuration}
                         onChange={handleChange}
@@ -196,6 +202,7 @@ const FilmForm = () => {
                     <label>Rental Rate</label>
                     <input
                         type="number"
+                        data-cy="rentalRate"
                         name="rentalRate"
                         value={formValues.rentalRate}
                         onChange={handleChange}
@@ -208,6 +215,7 @@ const FilmForm = () => {
                     <label>Length</label>
                     <input
                         type="number"
+                        data-cy="length"
                         name="length"
                         value={formValues.length}
                         onChange={handleChange}
@@ -219,6 +227,7 @@ const FilmForm = () => {
                     <label>Replacement Cost</label>
                     <input
                         type="number"
+                        data-cy="replacementCost"
                         name="replacementCost"
                         value={formValues.replacementCost}
                         onChange={handleChange}
@@ -231,6 +240,7 @@ const FilmForm = () => {
                     <label>Rating</label>
                     <select
                         name="rating"
+                        data-cy="rating"
                         value={formValues.rating}
                         onChange={handleRatingChange}
                         >
@@ -245,6 +255,7 @@ const FilmForm = () => {
                 <section>
                     <label>Special Features</label>
                     <SpecialFeaturesDropDown
+                        data-cy="specialFeaturesDropDown"
                         selectedFeatures={formValues.specialFeatures}
                         onToggleFeature={toggleSpecialFeature}
                     />
@@ -264,15 +275,16 @@ const FilmForm = () => {
                         type="number"
                         name="newCastId"
                         value={newCastId}
+                        data-cy="newCastId"
                         min={0}
                         onChange={handleNewCastIdChange}
                         
                     />
-                    <button type="button" onClick={addCastId}>Add Cast ID</button>
+                    <button type="button" onClick={addCastId} data-cy="addCastId">Add Cast ID</button>
                     {errors.castIds && <p>{errors.castIds}</p>}
                 </section>
 
-                <button type="submit">Submit</button>
+                <button type="submit" data-cy="submit">Submit</button>
             </form>
         </article>
     );

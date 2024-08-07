@@ -28,35 +28,34 @@ export default function ActorForm() {
     }
     function handleSubmit(event: FormEvent) {
         event.preventDefault();
-        const data = {firstName: firstName, lastName: lastName}
+        const data = {firstName: firstName.toUpperCase(), lastName: lastName.toUpperCase()}
         handlePost(data);
         console.log(status)
     }
     return (
         <article className="coolBoxRed wideFixedBox">
             <h2>New Actor?</h2>
+            
             <form onSubmit={e => handleSubmit(e)}>
-                <p>
-                    <label>
-                    First Name:
-                        <input 
-                            type="text" 
-                            value={firstName} 
-                            onChange={e => handleFirstNameChange(e.target.value)} 
-                        />
-                    </label>
-                </p>
-
-                <p>
-                    <label>
-                        Last Name:
-                        <input 
-                            type="text" 
-                            value={lastName} 
-                            onChange={e => handleLastNameChange(e.target.value)} 
-                        />
-                    </label>
-                </p>
+                <section>
+                    <label>First Name: </label>
+                    <input 
+                        type="text" 
+                        value={firstName} 
+                        onChange={e => handleFirstNameChange(e.target.value)} 
+                        required
+                    />
+                </section>
+                    
+                <section>
+                    <label>Last Name: </label>
+                    <input 
+                        type="text" 
+                        value={lastName} 
+                        onChange={e => handleLastNameChange(e.target.value)} 
+                    />
+                </section>
+                <br/>   
 
                 <button type="submit">Submit!</button>
             </form>

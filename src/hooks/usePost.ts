@@ -28,7 +28,7 @@ const usePost = <T>(url: string): PostResult<T> => {
         } catch (err) {
             setStatus(500);
             setError(err);
-            console.error('There was an error creating the resource:', error);
+            alert(`There was an error creating the resource: ${error}`);
         }
     };
   

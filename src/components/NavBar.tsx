@@ -3,10 +3,10 @@ export default function NavBar() {
 
 
     return (
-        <nav>
+        <nav className="navBar">
             <Link to="/" className="navButton">Home</Link>
-            <Link to="/films" className="navButton">FILMS</Link>
-            <Link to="/actors" className="navButton">ACTORS</Link>
+            <Link to="/films" className="navButton">Films</Link>
+            <Link to="/actors" className="navButton">Actors</Link>
     
         </nav>
     )
